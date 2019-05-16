@@ -1,4 +1,10 @@
-function Pipe() {
+function Trash() {
+  this.x = x;
+  this.y = y;
+  this.size = 10;
+
+
+  /*
   this.spacing = 175;
   this.top = random(height / 6, 3 / 4 * height);
   this.bottom = height - (this.top + this.spacing);
@@ -39,6 +45,5 @@ function Pipe() {
       return false;
     }
   }
-
-
+  */
 }
