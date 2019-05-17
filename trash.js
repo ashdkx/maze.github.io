@@ -1,49 +1,22 @@
-function Trash() {
+function Trash(x,y) {
   this.x = x;
   this.y = y;
   this.size = 10;
-
-
-  /*
-  this.spacing = 175;
-  this.top = random(height / 6, 3 / 4 * height);
-  this.bottom = height - (this.top + this.spacing);
-  this.x = width;
-  this.w = 80;
-  this.speed = 6;
-
-  this.highlight = false;
-
-  this.hits = function(bird) {
-    if (bird.y < this.top || bird.y > height - this.bottom) {
-      if (bird.x > this.x && bird.x < this.x + this.w) {
-        this.highlight = true;
-        return true;
-      }
-    }
-    this.highlight = false;
-    return false;
-  }
+  this.offset = 10;
 
   this.show = function() {
     fill(255);
-    if (this.highlight) {
-      fill(255, 0, 0);
-    }
-    rect(this.x, 0, this.w, this.top);
-    rect(this.x, height-this.bottom, this.w, this.bottom);
+    ellipse(this.x, this.y, this.size, this.size);
   }
 
-  this.update = function() {
-    this.x -= this.speed;
-  }
-
-  this.offscreen = function() {
-    if (this.x < -this.w) {
+  this.eaten = function(roomba) {
+    if ( floor(roomba.x - this.x < 0) && floor(roomba.y - this.y < 0)) {
+      console.log("x - x " + (floor(roomba.x - this.y)));
+      console.log("y - y " + (floor(roomba.y - this.y)));
+      this.x = random(this.offset, height - 10);
+      this.y = random(this.offset, height - 10);
       return true;
-    } else {
-      return false;
     }
+    return false;
   }
-  */
 }
