@@ -6,7 +6,7 @@ function Trash(x,y) {
 
   this.show = function() {
     fill(255);
-    ellipse(this.x, this.y, this.size, this.size);
+    rect(this.x, this.y, this.size, this.size);
   }
 
   this.eaten = function(roomba) {
