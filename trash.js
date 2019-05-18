@@ -10,13 +10,16 @@ function Trash(x,y) {
   }
 
   this.eaten = function(roomba) {
-    if ( floor(abs(roomba.x - this.x) <= 12) && floor(abs(roomba.y - this.y) <= 12)) {
-      console.log("x - x " + (floor(roomba.x - this.y)));
-      console.log("y - y " + (floor(roomba.y - this.y)));
+    if ( (abs(roomba.x - this.x) <= (roomba.size/4 + this.hyp())) &&
+         (abs(roomba.y - this.y) <= (roomba.size/4 + this.hyp()))) {
       this.x = floor(random(this.offset, height - 10));
       this.y = floor(random(this.offset, height - 10));
       return true;
     }
     return false;
+  }
+
+  this.hyp = function() {
+    return floor(sqrt(this.size * this.size + this.size * this.size));
   }
 }
