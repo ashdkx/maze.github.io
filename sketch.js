@@ -10,7 +10,7 @@ function preload() {
 
 function setup() {
   createCanvas(200, 200);
-  trash = new Trash(100, 100);
+  trash = new Trash();
   theRoomba = new Roomba(10, 10, img);
 
 }
@@ -21,14 +21,10 @@ function draw() {
   trash.show();
   theRoomba.show();
 
-
   if (trash.eaten(theRoomba)) {
     //console.log("EATEN!");
   }
-
-
 }
-
 
 function keyPressed() {
   if (key == 'w') {

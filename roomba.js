@@ -13,9 +13,9 @@ function Roomba(x, y, img) {
 
 
   this.update = function(x, y) {
-    if (this.x + x <= 0) {x = 0;}
+    if (this.x + x <= 0 || this.x + x > width) {x = 0;}
     else {this.x += x;}
-    if ( (this.y  ) + y <= 0) {y= 0;}
+    if (this.y + y <= 0 || this.y + y > height) {y= 0;}
     else {this.y += y;}
   }
 
