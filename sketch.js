@@ -12,7 +12,6 @@ function setup() {
   createCanvas(200, 200);
   trash = new Trash();
   theRoomba = new Roomba(10, 10, img);
-
 }
 
 function draw() {
@@ -27,16 +26,16 @@ function draw() {
 }
 
 function keyPressed() {
-  if (key == 'w') {
+  if (key == 'w' || keyIsDown(UP_ARROW)) {
       theRoomba.update(0, -20);
   }
-  else if (key == 's') {
+  else if (key == 's' || keyIsDown(DOWN_ARROW)) {
       theRoomba.update(0, 20);
   }
-  else if (key == 'a') {
+  else if (key == 'a' || keyIsDown(LEFT_ARROW)) {
      theRoomba.update(-20, 0);
   }
-  else if (key == 'd') {
+  else if (key == 'd' || keyIsDown(RIGHT_ARROW)) {
      theRoomba.update(20, 0);
   }
 }
